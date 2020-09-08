@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    padding:0;
+}
+.instagram_profile{
+    text-align: center;
+    font-size: larger;
+}
+.herotitle{
+    background-color: black;
+    background-size: contain;
+    height: 300px;
+    color:white;
+}
+.herodiv{
+    text-align: center;
+    padding-top: 50px;
+}
+.formbox{
+    width: 50%;
+    text-align: center;
+}
+.instagram_username{
+    font-weight: bold;
+    margin-top:20px;
+}
+.instagram_biography{
+    font-size: medium;
+}
+.instagram_private{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 80px;
+}
+
+a{
+    text-decoration-color: none;
+    text-decoration-line: none;
+    color:white
+}
+
+.anc{
+    text-decoration-color: none;
+    text-decoration-line: none;
+    color:black
+}

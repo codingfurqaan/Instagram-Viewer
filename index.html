@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+
+<title>Insta-viewer</title>
+
+</head>
+
+<!--navbar-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Insta_Viewer</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--navbar end-->
+
+
+<body>
+
+<!--hero title-->
+   <div class="herotitle">
+       <div class="herodiv">
+           <img src="logo.png" title="instagram-viewer">
+           <h1>Instagram Viewer</h1>
+           <p>check instagram feeds and profile picture</p>
+       </div>
+   </div>
+<!--hero title end-->
+
+<!--form to fetch-->
+   <div class="formbox mt-5 mb-5 container">
+    <form id="myForm" autocomplete="off">
+        <input type="text" id="Username" placeholder="Enter Instagram UserName" class="form-control"><br>
+        <input type="submit" value="search profile" class="btn btn-info form-control">
+    </form>
+   </div>
+  <!--form to fetch end--> 
+
+
+<!--container for result-->
+    <div class="container">
+        <div id="instagram-feed-demo" class="instagram_feed">
+        </div>
+    </div>
+<!--container for result end-->
+
+<!--do not delete or replace jquery script-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="jquery.instagramFeed.js"></script>
+<script src="InstagramFeed.js"></script>
+<!--do not delete or replace jquery script-->
+
+
+<!--jquery to fetch user data-->
+<script>
+    $(document).ready(function(){
+        $('#myForm').submit(function(e){
+            e.preventDefault()
+
+            var username = $('#Username').val()
+            $.instagramFeed({
+                'username' : username,
+                'container' : '#instagram-feed-demo',
+                'display-profile': true, 
+                'display_gallery':true,
+                'styling':true
+            })
+
+        })
+    })
+</script>
+<!--jquery to fetch user data-->
+
+
+</body>
+</html>
